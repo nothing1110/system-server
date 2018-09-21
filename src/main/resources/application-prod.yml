@@ -1,0 +1,9 @@
+server:
+  port: 6060
+  servlet:
+    context-path: /zfcms
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        web: DEBUG
