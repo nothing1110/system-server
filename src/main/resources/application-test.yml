@@ -1,0 +1,15 @@
+server:
+  port: 5050
+  servlet:
+    context-path: /zfcms
+
+logging:
+#  path: /spring-log
+  file: spring-log/my.log
+#  日志输出样式
+  pattern:
+    console:
+    file:
+# 日志等级
+  level:
+    org.springframework.web: DEBUG

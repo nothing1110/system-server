@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 public class BasisConfig {
+    //取配置文件中的值
     @Value("${spring.profiles.active}")
     public String PROFILE_ACTIVE;
 }

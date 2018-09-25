@@ -2,8 +2,3 @@ server:
   port: 5050
   servlet:
     context-path: /zfcms
-#logging:
-#  level:
-#    org:
-#      springframework:
-#        web: DEBUG
