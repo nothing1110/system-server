@@ -2,3 +2,13 @@ server:
   port: 5050
   servlet:
     context-path: /zfcms
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cms?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: zszf1110
+mybatis:
+  type-aliases-package: com.zhuangf.cms.dao
+#logging:
+#  level.root: DEBUG
