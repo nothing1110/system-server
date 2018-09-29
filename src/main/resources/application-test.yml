@@ -13,3 +13,7 @@ logging:
 # 日志等级
   level:
     org.springframework.web: DEBUG
+mybatis:
+  type-aliases-package: com.zhuangf.cms.dao
+  configuration:
+    map-underscore-to-camel-case: true #开启驼峰

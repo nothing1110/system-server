@@ -1,9 +1,7 @@
 package com.zhuangf.cms.service.impl;
 
 import com.zhuangf.cms.config.BasisConfig;
-import com.zhuangf.cms.dao.LogInfoMapper;
 import com.zhuangf.cms.service.HelloService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,18 +11,14 @@ import org.springframework.stereotype.Service;
  * @create: 2018-09-20 11:43
  **/
 @Service("helloService")
-@Slf4j
+//@Slf4j
 public class HelloServiceImpl implements HelloService {
     @Autowired
     private BasisConfig basisConfig;
 
-    @Autowired
-    private LogInfoMapper logInfoMapper;
-
     @Override
     public String dayHello() {
 //        log.error("测试lombok");
-        System.out.println(logInfoMapper.findAllLogInfo());
         return "Hello "+basisConfig.PROFILE_ACTIVE;
     }
 }

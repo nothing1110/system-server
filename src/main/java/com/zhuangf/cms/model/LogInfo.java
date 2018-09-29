@@ -7,8 +7,10 @@ import javax.persistence.*;
  * @description: 系统日志
  * @create: 2018-09-27 14:37
  **/
+//JPA的注解
 @Table(name = "t_sys_log")
 public class LogInfo {
+    @Id
     @Column(name="id")
     private String id;
     //访问用户ID
