@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author: zhuangf
- * @description:
  * @create: 2018-09-20 11:43
  **/
 @Service("logInfoService")
@@ -20,4 +19,10 @@ public class LogInfoServiceImpl implements LogInfoService {
     public LogInfo queryById(String id) {
         return logInfoMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public int insertLogInfo(LogInfo logInfo) {
+        return logInfoMapper.insert(logInfo);
+    }
+
 }
