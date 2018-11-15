@@ -27,11 +27,6 @@
             <artifactId>myFrame-base</artifactId>
             <version>${baseframe.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.zhuangf</groupId>
-            <artifactId>myFrame-common</artifactId>
-            <version>${baseframe.version}</version>
-        </dependency>
     </dependencies>
 
 </project>
