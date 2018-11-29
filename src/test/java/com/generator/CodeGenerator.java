@@ -21,16 +21,16 @@ import java.util.*;
  */
 public class CodeGenerator {
     //项目包路径相关配置
-	public static final String BASE_FRM_PACKAGE = "com.chinaoly.frm";//基础框架包
-    public static final String BASE_PACKAGE = "com.chinaoly.hczz";//项目基础包名称，根据自己公司的项目修改
-    public static final String PROJECT_MODULE_PACKAGE = ".business";//项目基础包名称，根据自己公司的项目修改
-    public static final String MODEL_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".Model";//Model所在包
-    public static final String MAP_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".dao.mapper";//DAO接口所在包
-    public static final String MAPPER_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".dao.mapper";//Mapper所在包
+	public static final String BASE_FRM_PACKAGE = "com.zhuangf.frame";//基础框架包
+    public static final String BASE_PACKAGE = "com.zhuangf";//项目基础包名称，根据自己公司的项目修改
+    public static final String PROJECT_MODULE_PACKAGE = ".cms";//项目基础包名称，根据自己公司的项目修改
+    public static final String MODEL_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".model";//Model所在包
+    public static final String MAP_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".dao";//DAO接口所在包
+    public static final String MAPPER_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".dao";//Mapper所在包
     public static final String SERVICE_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".service";//Service所在包
     public static final String SERVICE_IMPL_PACKAGE = SERVICE_PACKAGE + ".impl";//ServiceImpl所在包
     public static final String CONTROLLER_PACKAGE = BASE_PACKAGE +PROJECT_MODULE_PACKAGE+ ".controller";//Controller所在包
-    public static final String MAPPER_INTERFACE_REFERENCE = "com.chinaoly.frm" + ".core.baseDao.mybatis.Mapper";//Mapper插件基础接口的完全限定名
+    public static final String MAPPER_INTERFACE_REFERENCE = BASE_FRM_PACKAGE + ".base.dao.mybatis.CommonBaseMapper";//Mapper插件基础接口的完全限定名
     private static final String PROJECT_PATH = System.getProperty("user.dir");//项目在硬盘上的基础路径
     /**
      *
@@ -38,10 +38,10 @@ public class CodeGenerator {
     private static final String TEMPLATE_FILE_PATH = PROJECT_PATH + "/src/test/resources/generator/template";//模板位置
     private static final String JAVA_PATH = "/src/main/java"; //java文件路径
     //JDBC配置，请修改为你项目的实际配置
-    private static final String JDBC_URL = "jdbc:oracle:thin:@192.168.1.151:1521:ORCL";
-    private static final String JDBC_USERNAME = "chinaoly_hczz";
-    private static final String JDBC_PASSWORD = "chinaoly";
-    private static final String JDBC_DIVER_CLASS_NAME = "oracle.jdbc.driver.OracleDriver";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/cms?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+    private static final String JDBC_USERNAME = "root";
+    private static final String JDBC_PASSWORD = "zszf1110";
+    private static final String JDBC_DIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
     private static final String AUTHOR = "zhuangf";//@author
     private static final String DATE = new SimpleDateFormat("yyyy/MM/dd").format(new Date());//@date
@@ -52,7 +52,7 @@ public class CodeGenerator {
 
     public static void main(String[] args) {
         //genCode("输入表名");
-        genCodeByCustomModelName("T_HCZZ_CLRZ","THczzClrz");
+        genCodeByCustomModelName("t_sys_user","SysUser");
     }
 
     /**
@@ -74,8 +74,8 @@ public class CodeGenerator {
      */
     public static void genCodeByCustomModelName(String tableName, String modelName) {
         genModelAndMapper(tableName, modelName);
-//        genService(tableName, modelName);
-//        genController(tableName, modelName);
+        genService(tableName, modelName);
+        genController(tableName, modelName);
     }
 
 

@@ -1,12 +1,10 @@
 package ${baseProjectPackage}.controller;
 
-import ${baseFrmPackage}.core.entity.Result;
-import ${baseFrmPackage}.core.entity.ResultGenerator;
-import ${baseFrmPackage}.core.web.BaseController;
-import ${baseProjectPackage}.Model.${modelNameUpperCamel};
+import ${baseFrmPackage}.base.model.Result;
+import ${baseFrmPackage}.base.model.ResultGenerator;
+import ${baseFrmPackage}.base.controller.BaseController;
+import ${baseProjectPackage}.model.${modelNameUpperCamel};
 import ${baseProjectPackage}.service.${modelNameUpperCamel}Service;
-import ${baseFrmPackage}.log.aop.LogSave;
-import ${baseFrmPackage}.log.aop.methodType;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;

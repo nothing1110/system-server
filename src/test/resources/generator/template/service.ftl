@@ -1,12 +1,13 @@
 package ${baseProjectPackage}.service;
 
-import ${baseProjectPackage}.Model.${modelNameUpperCamel};
-import ${baseFrmPackage}.core.service.Service;
+import ${baseProjectPackage}.model.${modelNameUpperCamel};
+import ${baseFrmPackage}.base.service.BaseService;
 
 
 /**
  * Created by ${author} on ${date}.
  */
-public interface ${modelNameUpperCamel}Service extends Service<${modelNameUpperCamel}> {
+public interface ${modelNameUpperCamel}Service extends BaseService<${modelNameUpperCamel}> {
 
 }
+WW

@@ -1,8 +1,8 @@
 package ${baseProjectPackage}.service.impl;
 
-import ${baseFrmPackage}.core.service.AbstractService;
+import ${baseFrmPackage}.base.service.AbstractService;
 import ${baseProjectPackage}.dao.mapper.${modelNameUpperCamel}Mapper;
-import ${baseProjectPackage}.Model.${modelNameUpperCamel};
+import ${baseProjectPackage}.model.${modelNameUpperCamel};
 import ${baseProjectPackage}.service.${modelNameUpperCamel}Service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

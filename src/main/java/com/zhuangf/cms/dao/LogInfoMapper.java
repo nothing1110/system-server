@@ -1,7 +1,7 @@
 package com.zhuangf.cms.dao;
 
 import com.zhuangf.cms.model.LogInfo;
-import com.zhuangf.frame.base.dao.MysqlBaseMapper;
+import com.zhuangf.frame.base.dao.mybatis.MysqlBaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
