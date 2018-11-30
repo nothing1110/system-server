@@ -7,7 +7,6 @@ import ${baseFrmPackage}.base.service.BaseService;
 /**
  * Created by ${author} on ${date}.
  */
-public interface ${modelNameUpperCamel}Service extends BaseService<${modelNameUpperCamel}> {
+public interface ${modelNameUpperCamel}Service extends BaseService<${modelNameUpperCamel},String> {
 
 }
-WW

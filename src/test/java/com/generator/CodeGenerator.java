@@ -1,7 +1,6 @@
 package com.generator;
 
 import com.google.common.base.CaseFormat;
-import com.google.common.base.Strings;
 import freemarker.template.TemplateExceptionHandler;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.*;
@@ -86,6 +85,8 @@ public class CodeGenerator {
         context.addProperty(PropertyRegistry.CONTEXT_BEGINNING_DELIMITER, "`");
         context.addProperty(PropertyRegistry.CONTEXT_ENDING_DELIMITER, "`");
 
+        if (StringUtils.isEmpty(modelName)) modelName = tableNameConvertUpperCamel(tableName);
+
         //实体类字段注释
         CommentGeneratorConfiguration commentGeneratorConfiguration = new CommentGeneratorConfiguration();
         commentGeneratorConfiguration.setConfigurationType("generator.MyCommentGenerator");
@@ -131,7 +132,9 @@ public class CodeGenerator {
         context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
         TableConfiguration tableConfiguration = new TableConfiguration(context);
         tableConfiguration.setTableName(tableName);
-        if (Strings.isNullOrEmpty(modelName))tableConfiguration.setDomainObjectName(modelName);
+//        tableConfiguration.setMapperName(modelName);
+        tableConfiguration.setDomainObjectName(modelName);
+//        if (Strings.isNullOrEmpty(modelName))tableConfiguration.setDomainObjectName(modelName);
         tableConfiguration.setGeneratedKey(new GeneratedKey("id", "IDENTITY", true, null));
         context.addTableConfiguration(tableConfiguration);
 
@@ -154,7 +157,6 @@ public class CodeGenerator {
         if (generator.getGeneratedJavaFiles().isEmpty() || generator.getGeneratedXmlFiles().isEmpty()) {
             throw new RuntimeException("生成Model和Mapper失败：" + warnings);
         }
-        if (StringUtils.isEmpty(modelName)) modelName = tableNameConvertUpperCamel(tableName);
         System.out.println(modelName + ".java 生成成功");
         System.out.println(modelName + "Mapper.java 生成成功");
         System.out.println(modelName + "Mapper.xml 生成成功");
